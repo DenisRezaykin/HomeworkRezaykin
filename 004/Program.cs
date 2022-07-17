@@ -1,4 +1,5 @@
 ﻿// По заданному с клавиатуры номеру дня недели вывести его название
+/*
 int a;
 System.Console.WriteLine("Введите номер дня недели");
 string? s=Console.ReadLine();
@@ -31,3 +32,10 @@ if (a==7)
 {
     System.Console.WriteLine("Воскресенье");
 }
+*/
+
+System.Console.WriteLine("Введите номер дня недели");
+string? s=Console.ReadLine();
+int a=Convert.ToInt32(s);
+string?[] weekDays=new string[] {"Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"};
+System.Console.WriteLine(weekDays[a-1]);
