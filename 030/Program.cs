@@ -3,15 +3,13 @@ System.Console.WriteLine("Введите число N");
 int N=Convert.ToInt32(Console.ReadLine());
 int multiCount(int N)
 {
-    if (N==0) return 1;
-    int k=0, sum = 1;
-    while (N != 0)
+    int k=1, multi = 1;
+    while (k<=N)
     {
+        multi = multi * k;
         k++;
-        sum = sum * (N % 10);
-        N = N / 10;
     }
-    return sum;
+    return multi;
 }
 
 System.Console.WriteLine(multiCount(N));
