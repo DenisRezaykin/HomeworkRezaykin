@@ -43,15 +43,20 @@ Print(a);
 
 //Решение задачи
 int[] b;
-b = new int[a.Length];
-for (int i = 0; i < a.Length; i++)
-    b[i] = a[i];
+Clone(a, out b);
 
 // Вывод результатов
 System.Console.WriteLine();
 Print(b);
 
 // Подпрограммы
+void Clone(int[] a, out int[] b)
+{
+    b = new int[a.Length];
+    for (int i = 0; i < a.Length; i++)
+        b[i] = a[i];
+}
+
 void Init(out int[] t, int Length, int min, int max)
 {
     t = new int[8];
