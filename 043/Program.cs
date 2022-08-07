@@ -1,15 +1,15 @@
 ﻿// Определить сколько чисел больше 0 введено с клавиатуры
 
 //решение
-System.Console.WriteLine(CountNegativeNumbers(Input())); 
+System.Console.WriteLine(CountPositiveNumbers(Input())); 
 
 //функции
-int CountNegativeNumbers(int[] a) //функция подсчета чисел меньше 0
+int CountPositiveNumbers(int[] a) //функция подсчета чисел меньше 0
 {
-   int quantNegNumb=0;
+   int quantPosNumb=0;
    for (int i=0; i<a.Length; i++)
-      if (a[i]>0) quantNegNumb++;
-   return quantNegNumb;
+      if (a[i]>0) quantPosNumb++;
+   return quantPosNumb;
 }
 
 int[] Input() //функция ввода: возвращает массив чисел введенных с клавиатуры
