@@ -9,6 +9,93 @@
 */
 
 Random random = new Random();
+int N = 3;
+int[,] a;
+int[,] b;
+int[,] c;
+a = InitA(N, N);
+b = InitA(N, N);
+
+// c=InitA(N,N);
+System.Console.WriteLine("\nТаблица 1");
+Print(a);
+System.Console.WriteLine("\nТаблица 2");
+Print(b);
+c = Sum(a, b);
+System.Console.WriteLine("\nТаблица суммы 1 и 2 таблицы");
+Print(c);
+
+// Вывод массива на экран
+
+void Print(int[,] a)
+{
+    for (int i = 0; i < a.GetLength(0); i++)
+    {
+        for (int j = 0; j < a.GetLength(1); j++) System.Console.Write($"{a[i, j], 5} ");
+        System.Console.WriteLine();
+    }
+}
+
+int[,] InitA(int N, int M)
+{
+    int[,] a;
+    a = new int[N, M]; //создаем массив
+
+    for (int i = 0; i < a.GetLength(0); i++) // (0) означает получить длину по нулевому измерению
+    {
+        for (int j = 0; j < a.GetLength(1); j++) // (1) означает получить длину по первому измерению
+        {
+            a[i, j] = random.Next(1, 100);
+        }
+    }
+    return a;
+}
+
+int[,] Sum(int[,] a, int[,] b)
+{
+    int[,] c;
+    c = new int[a.GetLength(0), a.GetLength(1)];
+    for (int i = 0; i < a.GetLength(0); i++) // (0) означает получить длину по нулевому измерению
+    {
+        for (int j = 0; j < a.GetLength(1); j++)
+            c[i, j] = a[i, j] + b[i, j];
+    }
+    return c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Random random = new Random();
 int N=random.Next(1,101); //размерность таблиц  100>=N>=1
 
 CreateFile(N); //вспомогательный метод, создает файл Tables.txt с размерностью N в первой строке и двумя таблицами через пустую строку
@@ -19,10 +106,10 @@ Solve(); //метод решения: читает файл Tables.txt, сумм
 void Solve() // решение задачи
 {
     using (StreamReader sr = new StreamReader("Tables.txt"))  //открывает текстовый поток чтения файла "Tables.txt"
-    { 
+    {
         string s = "";
-        s=sr.ReadLine(); //читаем первую строку из файла: размерность N 
-        int N=int.Parse(s.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]); //получаем из файла размерность N 
+        s=sr.ReadLine(); //читаем первую строку из файла: размерность N
+        int N=int.Parse(s.Split(' ', StringSplitOptions.RemoveEmptyEntries)[0]); //получаем из файла размерность N
     
         s=sr.ReadLine(); //читает пустую строку в Tables.txt
         
@@ -45,9 +132,9 @@ void Solve() // решение задачи
                 }
         }
     
-        //метод в методе :) 
+        //метод в методе :)
         int[,] ReadTable(int N) //метод чтения таблицы из файла, возвращает 2D массив
-            {  
+            {
                 int[,] a=new int[N,N];
                 string s = "";
                 for (int i=0; i<N;i++) //заполнение 2D массива c помощью sr.ReadLine построчно
@@ -60,7 +147,7 @@ void Solve() // решение задачи
                         }
                 }
             return a;
-            }          
+            }
     }
 }
 
@@ -75,12 +162,12 @@ void CreateFile(int N) //вспомогательный метод, создае
 
         FillTable(); //запись первой таблицы в файл
 
-        sw.Write($"\n"); // перенос на новую строку   
+        sw.Write($"\n"); // перенос на новую строку
 
         FillTable(); //запись второй таблицы в файл
 
-        //метод в методе :)   
-        void FillTable() //метод заполнения таблицы 
+        //метод в методе :)
+        void FillTable() //метод заполнения таблицы
             {
                 for(int i=0; i<N; i++)   // цикл записи матрицы
                 {
@@ -94,3 +181,4 @@ void CreateFile(int N) //вспомогательный метод, создае
     }
     }
   
+  */
