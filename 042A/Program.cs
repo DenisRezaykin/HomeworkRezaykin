@@ -38,7 +38,7 @@ void Print(int[,] a)
 
 int[,] InitA(int N, int M)
 {
-    int[,] a;
+    int[,] d;
     a = new int[N, M]; //создаем массив
 
     for (int i = 0; i < a.GetLength(0); i++) // (0) означает получить длину по нулевому измерению
